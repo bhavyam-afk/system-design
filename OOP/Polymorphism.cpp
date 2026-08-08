@@ -113,7 +113,7 @@ public:
         cout << brand << " " << model << " : Accelerating to " << currentSpeed << " km/h. Battery at " << batteryLevel << "%." << endl;
     }
 
-    // Overriding accelerate - Dynamic Polymorphism
+    // Overriding and overloading accelerate at the same time.
     void accelerate(int speed) {
         if (!isEngineOn) {
             cout << brand << " " << model << " : Cannot accelerate! Engine is off." << endl;
@@ -141,7 +141,7 @@ int main() {
     Car* myManualCar = new ManualCar("Ford", "Mustang");
     myManualCar->startEngine();
     myManualCar->accelerate();
-    myManualCar->accelerate();
+    myManualCar->accelerate(50);
     myManualCar->brake();
     myManualCar->stopEngine();
 
@@ -150,7 +150,7 @@ int main() {
     Car* myElectricCar = new ElectricCar("Tesla", "Model S");
     myElectricCar->startEngine();
     myElectricCar->accelerate();
-    myElectricCar->accelerate();
+    myElectricCar->accelerate(50);
     myElectricCar->brake();
     myElectricCar->stopEngine();
 

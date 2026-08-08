@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 #include <vector>
 
 using namespace std;
@@ -25,17 +26,24 @@ public:
         products.push_back(p);
     }
 
-    const vector<Product*>& getProducts() { 
+    const vector<Product*>& getProducts() const { 
         return products;
     } 
 
     //Calculates total price in cart.
-    double calculateTotal() {
+    double calculateTotal() const {
         double total = 0;
         for (auto p : products) {
             total += p->price;
         }
         return total;
+    }
+
+    // Cleans up the Products this cart owns, so callers don't have to.
+    ~ShoppingCart() {
+        for (auto p : products) {
+            delete p;
+        }
     }
 };
 
@@ -84,6 +92,11 @@ int main() {
 
     ShoppingCartStorage* db = new ShoppingCartStorage(cart);
     db->saveToDatabase();
+
+    // Cleanup
+    delete printer;
+    delete db;
+    delete cart; // also deletes the Products it owns, via ~ShoppingCart()
 
     return 0;
 }
