@@ -1,6 +1,5 @@
 #include <iostream>
 #include <string>
-
 using namespace std;
 
 // Base Car class
@@ -31,13 +30,10 @@ public:
         cout << brand << " " << model << " : Engine turned off." << endl;
     }
 
-    virtual void accelerate() = 0;  // Abstract method for Dynamic Polymorphism
-
+    virtual void accelerate() = 0;           // Abstract method for Dynamic Polymorphism
     virtual void accelerate(int speed) = 0;  //Abstract method for Static Polymorphism
-
-    virtual void brake() = 0;       // Abstract method for Dynamic Polymorphism
-    
-    virtual ~Car() {}               // Virtual destructor
+    virtual void brake() = 0;                // Abstract method for Dynamic Polymorphism
+    virtual ~Car() {}                        // Virtual destructor
 };
 
 class ManualCar : public Car {
@@ -137,26 +133,58 @@ public:
 };
 
 // Main function
-int main() {
-    Car* myManualCar = new ManualCar("Ford", "Mustang");
-    myManualCar->startEngine();
-    myManualCar->accelerate();
-    myManualCar->accelerate(50);
-    myManualCar->brake();
-    myManualCar->stopEngine();
+// int main() {
+//     Car* myManualCar = new ManualCar("Ford", "Mustang");
+//     myManualCar->startEngine();
+//     myManualCar->accelerate();
+//     myManualCar->accelerate(50);
+//     myManualCar->brake();
+//     myManualCar->stopEngine();
 
-    cout << "----------------------" << endl;
+//     cout << "----------------------" << endl;
 
-    Car* myElectricCar = new ElectricCar("Tesla", "Model S");
-    myElectricCar->startEngine();
-    myElectricCar->accelerate();
-    myElectricCar->accelerate(50);
-    myElectricCar->brake();
-    myElectricCar->stopEngine();
+//     Car* myElectricCar = new ElectricCar("Tesla", "Model S");
+//     myElectricCar->startEngine();
+//     myElectricCar->accelerate();
+//     myElectricCar->accelerate(50);
+//     myElectricCar->brake();
+//     myElectricCar->stopEngine();
 
-    // Cleanup
-    delete myManualCar;
-    delete myElectricCar;
+//     // Cleanup
+//     delete myManualCar;
+//     delete myElectricCar;
 
-    return 0;
+//     return 0;
+// }
+
+
+/*
+Types:
+A.Compile Time:
+1. Function overloading: Same function name with different parameters.
+2. Operator overloading: Same operator with different data types.
+
+B. Run Time:
+
+*/ 
+
+
+// Run Time Polymorphism. 
+class Animal{
+    public: 
+        virtual void speak(){
+            cout << "Animal Sound" << endl;
+        }
+};
+
+class Dog : public Animal{
+    public: 
+        void speak() override {
+            cout << "Dog Barks" << endl;
+        }
+};
+
+int main(){
+    Dog d;
+    d.speak();
 }

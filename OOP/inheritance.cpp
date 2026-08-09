@@ -20,13 +20,16 @@ access or call parent class characters(variables) and behaviours(methods).
 Hence providing code reusability.
 */
 class Car {
-protected:
+public:
     string brand;
     string model;
     bool isEngineOn;
     int currentSpeed;
 
 public:
+    Car(){
+
+    }
     Car(string b, string m) {
         this->brand = b;
         this->model = m;
@@ -102,6 +105,7 @@ public:
 int main() {
 
     ManualCar* myManualCar = new ManualCar("Suzuki", "WagonR");
+    cout << "brand: " << myManualCar->brand << endl;
     myManualCar->startEngine();
     myManualCar->shiftGear(1); //specific to manual car
     myManualCar->accelerate();
@@ -112,6 +116,7 @@ int main() {
     cout << "----------------------" << endl;
 
     ElectricCar* myElectricCar = new ElectricCar("Tesla", "Model S");
+    cout << "brand: " << myElectricCar->brand << endl;
     myElectricCar->chargeBattery(); //specific to electric car
     myElectricCar->startEngine(); 
     myElectricCar->accelerate();
@@ -121,3 +126,14 @@ int main() {
 
     return 0;
 }
+
+
+/* 
+Types of Inheritence: 
+1. Single Inheritence: A child class inherits from a single parent class.
+3. Multilevel Inheritence: A child class inherits from a parent class, and then another child class inherits from that child class, forming a chain of inheritance.
+2. Multiple Inheritence: A child class inherits from multiple parent classes.
+4. Hierarchical Inheritence: Multiple child classes inherit from a single parent class.
+5. Hybrid Inheritence: A combination of two or more types of inheritance. For example, a child class may inherit from multiple parent classes, and those parent classes may also have their own parent classes.
+*/
+
