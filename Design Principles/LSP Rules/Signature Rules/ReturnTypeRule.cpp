@@ -49,10 +49,10 @@ public:
 
 int main() {
     Parent* parent = new Parent();
-    Child* child = new Child();
+    Parent* child = new Child();
 
     Client* client = new Client(child);
-    //Client * client = new Client(parent);
+    // Client * client = new Client(parent);
     client->takeAnimal();
 
     return 0;

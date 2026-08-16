@@ -25,7 +25,7 @@ public:
         balance = 0; 
     }
 
-    void deposit(double amount) {
+    void deposit(double amount){
         balance += amount;
         cout << "Deposited: " << amount << " in Savings Account. New Balance: " << balance << endl;
     }

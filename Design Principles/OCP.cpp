@@ -60,30 +60,28 @@ public:
 
 //Abstract class
 class Persistence {
-private:
-    ShoppingCart* cart;
-
 public:
-    virtual void save(ShoppingCart* cart) = 0; // Pure virtual function
+    ShoppingCart* cart; // not a good habit rather give in function parameter
+    virtual void save() = 0; // Pure virtual function
 };
 
 class SQLPersistence : public Persistence {
 public:
-    void save(ShoppingCart* cart) override {
+    void save() override {
         cout << "Saving shopping cart to SQL DB..." << endl;
     }
 };
 
 class MongoPersistence : public Persistence {
 public:
-    void save(ShoppingCart* cart) override {
+    void save() override {
         cout << "Saving shopping cart to MongoDB..." << endl;
     }
 };
 
 class FilePersistence : public Persistence {
 public:
-    void save(ShoppingCart* cart) override {
+    void save() override {
         cout << "Saving shopping cart to a file..." << endl;
     }
 };
@@ -100,9 +98,9 @@ int main() {
     Persistence* mongo = new MongoPersistence();
     Persistence* file = new FilePersistence();
 
-    db->save(cart);   // Save to SQL database
-    mongo->save(cart); // Save to MongoDB
-    file->save(cart);  // Save to File
+    db->save();   // Save to SQL database
+    mongo->save(); // Save to MongoDB
+    file->save();  // Save to File
 
     return 0;
 }
