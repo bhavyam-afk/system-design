@@ -4,3 +4,5 @@
 4. Learn about how Notification system / Filters are created. 
 5. is-a relationship: inheritance.
 6. has-a relationship: 
+7. make client interact with ONLY 1 class.
+8. 

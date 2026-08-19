@@ -35,7 +35,12 @@ Observer design pattern:
 
 
 Decorator deisgn pattern: 
-- To provide additional functionalities at Runtime. 
+- To provide additional functionalities at Runtime. (dynamically adding customisations). 
+- for the newer class we have to pass the old pointer as parameter. 
+- used when there is already an element and we have to simply give it more properties.
+- eg: text element already exist but making it bold, italics, underline. 
+
+
 ---
 
 
