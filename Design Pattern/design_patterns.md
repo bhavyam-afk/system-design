@@ -41,6 +41,9 @@ Decorator deisgn pattern:
 - eg: text element already exist but making it bold, italics, underline. 
 
 
+Command Pattern: 
+- To orchestrate different functions of an object, we can make an interface with a single function called execute. 
+- used when: making keybord shortcuts, multiple tasks on single function calls. 
 ---
 
 
