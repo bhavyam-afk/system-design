@@ -26,6 +26,16 @@ singleton design pattern:
 - Example (this workspace): see `Design Pattern/Singleton Design Pattern/SimpleSingleton.cpp`, `EagerLock.cpp`, `Locking.cpp`, `DoubleLocking.cpp` for different singleton approaches and locking strategies.
 
 
+Observer design pattern:
+- If some objects will have change on change in someone then its responsibility of the object that is being observed to notify all observing objects. 
+- Implemented using polling. 
+- There is 1 observable object and mutiple observing objects in this design. 
+- Breaks SRP, but we do consider that our logic of adding elements, removing elements and notify will never change, so the business logic is the onluy thing for which a class changes. 
+- event handling is biggest use case of this. 
+
+
+Decorator deisgn pattern: 
+- To provide additional functionalities at Runtime. 
 ---
 
 
