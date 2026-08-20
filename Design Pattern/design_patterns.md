@@ -44,6 +44,10 @@ Decorator deisgn pattern:
 Command Pattern: 
 - To orchestrate different functions of an object, we can make an interface with a single function called execute. 
 - used when: making keybord shortcuts, multiple tasks on single function calls. 
+
+Adapter Design Pattern: 
+- Interface b/w 3rd party code and our own class. 
+- use case: 
 ---
 
 
